@@ -1,1 +1,22 @@
+@font-face {
+  font-family: "font";
+  src: url("../fonts/Helvetica\ Neue\ 97\ Black\ Condensed\ Oblique.otf");
+}
 
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #0c0c0c;
+
+}
+
+body {
+  text-align: center;
+  font-family: font;
+}
+
+h1 {
+  font-size: 3rem;
+  text-shadow: #242424;
+  
+}

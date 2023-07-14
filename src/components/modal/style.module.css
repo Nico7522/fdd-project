@@ -1,0 +1,21 @@
+.btn {
+    width: 30px;
+    background: #bd1414;
+    border-radius: 0%;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  
+  .description-container {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    background: #000;
+    color: rgb(255, 255, 255);
+   
+  }
+  
+  .description {
+    margin-top: 150px;
+  }
