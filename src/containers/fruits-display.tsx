@@ -7,12 +7,12 @@ import { FruitsResponse } from "../types/fruit";
 export default function Fruits() {
   const { data, error, loading } = useFetchFruit();
   const [filteredData, setFilteredData] = useState<FruitsResponse[]>([]);
-  const [page, setPage] = useState<number>(13);
+  const [page, setPage] = useState<number>(12);
   const [value, setValue] = useState<string>("");
 
   useEffect(() => {
     if (data) {
-      const filtered = data.slice(1, page).filter((fruit: FruitsResponse) => {
+      const filtered = data.filter((fruit: FruitsResponse) => {
         return fruit.french_name.toLowerCase().includes(value.toLowerCase());
       });
       setFilteredData(filtered);
@@ -26,7 +26,7 @@ export default function Fruits() {
       <SearchBar value={value} setValue={setValue} />
 
       <div className={style["fruits-container"]}>
-        {filteredData?.map((fruit: FruitsResponse) => {
+        {filteredData?.slice(0, page).map((fruit: FruitsResponse) => {
           return <Fruit {...fruit} />;
         })}
       </div>

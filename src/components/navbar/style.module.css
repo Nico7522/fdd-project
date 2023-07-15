@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "font";
+    src: local("font"), url("../../fonts/one-piece-font.ttf");
+  }
+
 nav {
     height: 50px;
     background: linear-gradient(45deg, rgb(156,14,156), midnightblue);
@@ -19,6 +24,8 @@ nav {
     margin-right: 10px;
     color: #f1f1f1;
     cursor: pointer;
+    font-family: font;
+    font-size: 1.5rem;
  
 }
 
