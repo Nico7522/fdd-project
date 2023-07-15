@@ -3,7 +3,6 @@ import franceLogo from "../../images/france.png";
 import japonLogo from "../../images/japon.png";
 import style from "./style.module.css";
 import ModalDescription from "../modal/modal";
-
 import { useState } from "react";
 export default function Fruit({
   id,
@@ -27,6 +26,7 @@ export default function Fruit({
         <br />
         {french_name}
       </h4>
+      <p className={style['type']}>{type}</p>
       <div className={style["img-container"]}>
         <img
           className={style["img"]}
@@ -34,7 +34,7 @@ export default function Fruit({
           alt=""
         />
       </div>
-      <button onClick={() => setModal(!modal)}>Description</button>
+      <button className={style['btn-description']} onClick={() => setModal(!modal)}>Description</button>
      {modal && <ModalDescription description={description} className={style["modal"]} setModal={setModal} />}
     </div>
   );

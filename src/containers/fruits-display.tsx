@@ -19,11 +19,7 @@ export default function Fruits() {
     }
   }, [value, data, page]);
   if (loading) {
-    return (
-      
-        <div className={style["loader"]}></div>
-      
-    );
+    return <div className={style["loader"]}></div>;
   }
   return (
     <>
@@ -34,16 +30,14 @@ export default function Fruits() {
           return <Fruit {...fruit} />;
         })}
       </div>
-      {value === "" &&
-          <button
-            className={style["next-data"]}
-            onClick={() => setPage((page) => page + 12)}
-          >
-            Load More
-          </button>
-
-
-}
-</>
+      {value === "" && (
+        <button
+          className={style["next-data"]}
+          onClick={() => setPage((page) => page + 12)}
+        >
+          Load More
+        </button>
+      )}
+    </>
   );
 }

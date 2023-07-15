@@ -1,11 +1,11 @@
-import { Dispatch, SetStateAction, useState } from "react"
+import { Dispatch, SetStateAction } from "react"
 import style from './style.module.css'
 type PropsSearchBar = {
     value: string;
     setValue: Dispatch<SetStateAction<string>>
 }
 export default function SearchBar({value, setValue}: PropsSearchBar){
-    const [search, setSearch] = useState<string>("")
+
  
     return (
         <form>

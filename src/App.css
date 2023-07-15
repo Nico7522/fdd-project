@@ -1,4 +1,16 @@
 @font-face {
   font-family: "font";
-  src: url("./Helvetica\ Neue\ 97\ Black\ Condensed\ Oblique.otf");
+  src: local('font'), url("./fonts/one-piece-font.ttf");
+  
 }
+
+h1 {
+  font-family: font;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  }
+
+
