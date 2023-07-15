@@ -33,6 +33,11 @@ nav {
     display: none;
 }
 
+a, a:visited, a:hover, a:active {
+    color: inherit;
+    text-decoration: none;
+  }
+
 @media screen and (max-width: 500px) {
     .liste {
         flex-direction: column;

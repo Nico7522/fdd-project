@@ -28,11 +28,12 @@ export default function Fruit({
       </h4>
       <p className={style['type']}>{type}</p>
       <div className={style["img-container"]}>
-        <img
+        {filename ? (<img
           className={style["img"]}
           src={`https://images.api-onepiece.com/fruits/${filename}`}
           alt=""
-        />
+        />) : (<p>Pas de visuel pour le moment</p>)}
+        
       </div>
       <button className={style['btn-description']} onClick={() => setModal(!modal)}>Description</button>
      {modal && <ModalDescription description={description} className={style["modal"]} setModal={setModal} />}

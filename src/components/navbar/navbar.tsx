@@ -1,10 +1,11 @@
 import style from "./style.module.css";
 import React, { useState, useEffect } from "react";
 import MenuImage from "../../images/barre-de-menu.png"
+import { NavLink, useNavigate } from "react-router-dom";
 export default function Navbar() {
   const [toggleMenu, setToggleMenu] = useState<boolean>(false);
   const [width, setWidth] = useState<number>(window.innerWidth)
-
+  const navigation = useNavigate()
   const toggleNavSmallScreen = () => {
     setToggleMenu(!toggleMenu);
   };
@@ -27,7 +28,7 @@ export default function Navbar() {
     <nav>
       {(toggleMenu || width > 500) && (
         <ul className={style["liste"]}>
-          <li className={style["items"]}>Fruits</li>
+          <li className={style["items"]}><NavLink to='/fruits'>Fruits</NavLink></li>
           <li className={style["items"]}>Sabres</li>
           <li className={style["items"]}>Iles</li>
         </ul>

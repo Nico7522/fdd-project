@@ -1,0 +1,23 @@
+.title-home {
+    margin-top: 10%;
+}
+
+.nav-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-categorie {
+    width: 20%;
+    border: solid 2px red;
+}
+
+.image {
+    width: 50%;
+}
+
+.image-ile {
+    width: 33.5%;
+}

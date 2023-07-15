@@ -23,6 +23,7 @@ export default function Fruits() {
   }
   return (
     <>
+    <h1>Les fruits du Démon</h1>
       <SearchBar value={value} setValue={setValue} />
 
       <div className={style["fruits-container"]}>

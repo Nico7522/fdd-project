@@ -1,6 +1,8 @@
 import './App.css'
 import Navbar from './components/navbar/navbar'
 import Fruits from './containers/fruits-display'
+import { Outlet } from 'react-router-dom';
+
 
 function App() {
   
@@ -8,8 +10,10 @@ function App() {
   return (
     <>
     <Navbar />
-    <h1>Les fruits du Démon</h1>
-    <Fruits />
+    
+    <Outlet />
+    
+    {/* <Fruits /> */}
     </>
   )
 }
