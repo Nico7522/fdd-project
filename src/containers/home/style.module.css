@@ -1,5 +1,6 @@
 .title-home {
     margin-top: 10%;
+    letter-spacing: 5px;
 }
 
 .nav-container {
@@ -11,7 +12,15 @@
 
 .nav-categorie {
     width: 20%;
-    border: solid 2px red;
+    margin-right: 10px;
+    margin-top: 15px;
+    border: solid 5px rgb(66, 58, 58);
+    border-radius: 25px ;
+    transition: margin-right 0.5s;
+}
+
+.nav-categorie:hover {
+    margin-right: 15px;
 }
 
 .image {

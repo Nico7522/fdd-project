@@ -29,7 +29,7 @@ export default function Navbar() {
       {(toggleMenu || width > 500) && (
         <ul className={style["liste"]}>
           <li className={style["items"]}><NavLink to='/fruits'>Fruits</NavLink></li>
-          <li className={style["items"]}>Sabres</li>
+          <li className={style["items"]}><NavLink to='/sabres'>Sabres</NavLink></li>
           <li className={style["items"]}>Iles</li>
         </ul>
       )}

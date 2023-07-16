@@ -2,6 +2,7 @@ import App from "../App";
 import FruitsPage from "../pages/fruits/fruits";
 import  { RouteObject } from 'react-router';
 import HomePage from "../pages/home/home-page";
+import SabresPage from "../pages/sabres/sabres";
 
 
 export const routes: RouteObject[] = [
@@ -17,6 +18,10 @@ export const routes: RouteObject[] = [
             {
                 path: "fruits",
                 element: <FruitsPage />
+            },
+            {
+                path: "sabres",
+                element: <SabresPage />
             }
         ]
     }

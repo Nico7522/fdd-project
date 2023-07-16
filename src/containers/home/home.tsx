@@ -37,7 +37,7 @@ const SabresNavigation = () => {
         <div className={style['nav-categorie']}>
           
             <NavLink to={'fruits'} >
-            <h3>Voir la liste des fruits</h3>
+            <h3>Voir la liste des sabres</h3>
             <div>
                 <img className={style['image']} src={sabre} alt="" />
             </div>
@@ -51,7 +51,7 @@ const IlesNavigation = () => {
     return (
         <div className={style['nav-categorie']}>
             <NavLink to={'fruits'} >
-            <h3>Voir la liste des fruits</h3>
+            <h3>Voir la liste des îles</h3>
             <div>
                 <img className={style['image-ile']} src={ile} alt="" />
             </div>

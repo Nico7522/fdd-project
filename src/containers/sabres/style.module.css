@@ -1,0 +1,13 @@
+.sabres-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+   
+  }
+
+  .next-data {
+    margin-top: 15px;
+    width: 20%;
+    background: #c93d3d;
+  }
