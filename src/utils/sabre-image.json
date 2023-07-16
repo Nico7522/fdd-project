@@ -31,6 +31,58 @@
         {
             "name": "Enma",
             "link": "../images/enma.jpg"
+        },
+        {
+            "name": "Ame No Habakiri",
+            "link": "../images/amenohabakiri.jpg"
+        },
+        {
+            "name": "Yamaoroshi",
+            "link": "../images/inconnu.jpg"
+        },
+        {
+            "name": "Shigure",
+            "link": "../images/shigure.jpg"
+        },
+        {
+            "name": "Sandai Kitetsu",
+            "link": "../images/sandaiKitetsu.jpg"
+        },
+        {
+            "name": "Yubashiri",
+            "link": "../images/yubashiri.jpg"
+        },
+        {
+            "name": "kashū",
+            "link": "../images/kashū.jpg"
+        },
+        {
+            "name": "Oto",
+            "link": "../images/oto.jpg"
+        },
+        {
+            "name": "Kogarashi",
+            "link": "../images/oto.jpg"
+        },
+        {
+            "name": "Raiu",
+            "link": "../images/raiu.jpg"
+        },
+        {
+            "name": "Durandal",
+            "link": "../images/durandal.jpg"
+        },
+        {
+            "name": "Shirauo",
+            "link": "../images/shirauo.jpg"
+        },
+        {
+            "name": "purettseru",
+            "link": "../images/purettseru.jpg"
+        },
+        {
+            "name": "Konpira",
+            "link": "../images/konpira.jpg"
         }
     ]
 

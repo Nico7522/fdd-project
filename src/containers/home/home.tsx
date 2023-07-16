@@ -37,7 +37,7 @@ const SabresNavigation = () => {
     return (
         <div className={style['nav-categorie']}>
           
-            <NavLink to={'fruits'} >
+            <NavLink to={'sabres'} >
             <h3>Voir la liste des sabres</h3>
             <div className={style['image-container']}>
                 <img className={style['image']} src={sabre} height={150} alt="" />
