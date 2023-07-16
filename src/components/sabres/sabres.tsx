@@ -13,6 +13,7 @@ type PropsSabre = {
   category: string;
   description: string;
   is_destroy: boolean;
+  link: string
 };
 
 export default function Sabre({
@@ -23,6 +24,7 @@ export default function Sabre({
   category,
   description,
   is_destroy,
+  link
 }: PropsSabre) {
   const [modal, setModal] = useState<boolean>(false);
 
@@ -40,17 +42,13 @@ export default function Sabre({
       </h4>
       <p className={style["type"]}>{type ? type : "Inconnu"}</p>
       <div>
-        {sabreImage.sabreImage.map((image) => {
-          image.name === french_name && console.log(image.name);
-
-          return image.name === french_name && (
             <img
               className={style["img"]}
-              src={"http://localhost:5173/src/images/" + image.link}
+              src={"http://localhost:5173/src/images/" + link}
               alt=""
             />
-          );
-        })}
+         
+      
       </div>
       {/* <div className={style["img-container"]}>
           {filename ? (<img

@@ -5,5 +5,6 @@ export type SabreResponse = {
     type: string;
     category: string;
     description: string;
-    is_destroy: boolean
+    is_destroy: boolean;
+    link: string;
 }
