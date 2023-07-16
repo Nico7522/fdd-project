@@ -3,6 +3,7 @@ import Fruit from "../components/fruits/fruits";
 import SearchBar from "../components/searchbar/searchbar";
 import { useFetchFruit } from "../hooks/fruit";
 import style from "./style.module.css";
+import "../App.css";
 import { FruitsResponse } from "../types/fruit";
 export default function Fruits() {
   const { data, error, loading } = useFetchFruit();
@@ -19,7 +20,7 @@ export default function Fruits() {
     }
   }, [value, data, page]);
   if (loading) {
-    return <div className={style["loader"]}></div>;
+    return <div className="loader"></div>;
   }
   return (
     <>
