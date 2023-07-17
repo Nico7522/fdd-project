@@ -8,3 +8,8 @@ export type SabreResponse = {
     is_destroy: boolean;
     link: string;
 }
+
+export type SabreDetails = {
+    name: string;
+    link: string;
+}

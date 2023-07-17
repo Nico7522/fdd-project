@@ -5,6 +5,8 @@ import ModalDescription from "../modal/modal";
 import { useState } from "react";
 import sabreImage from "../../utils/sabre-image.json";
 import Yoru from "../../images/yoru.jpg";
+import { SabreDetails } from "../../types/sabre";
+import SabreImage from "./sabres-image";
 type PropsSabre = {
   id: number;
   french_name: string;
@@ -13,7 +15,7 @@ type PropsSabre = {
   category: string;
   description: string;
   is_destroy: boolean;
-  link: string
+  sabreDetails: SabreDetails[]
 };
 
 export default function Sabre({
@@ -24,7 +26,8 @@ export default function Sabre({
   category,
   description,
   is_destroy,
-  link
+  sabreDetails
+  
 }: PropsSabre) {
   const [modal, setModal] = useState<boolean>(false);
 
@@ -41,23 +44,8 @@ export default function Sabre({
         {french_name}
       </h4>
       <p className={style["type"]}>{type ? type : "Inconnu"}</p>
-      <div>
-            <img
-              className={style["img"]}
-              src={"http://localhost:5173/src/images/" + link}
-              alt=""
-            />
-         
-      
-      </div>
-      {/* <div className={style["img-container"]}>
-          {filename ? (<img
-            className={style["img"]}
-            src={`https://images.api-onepiece.com/fruits/${filename}`}
-            alt=""
-          />) : (<p>Pas de visuel pour le moment</p>)}
-          
-        </div> */}
+   
+      <SabreImage sabreDetails={sabreDetails} frenchName={french_name} />
       <button
         className={style["btn-description"]}
         onClick={() => setModal(!modal)}

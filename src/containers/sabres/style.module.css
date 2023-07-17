@@ -1,3 +1,11 @@
+@media screen and (max-width: 850px) {
+  .sabres-container {
+    /* flex-direction: column; */
+    overflow-y: hidden !important;
+    /* justify-content: center; */
+ 
+  }
+}
 .sabres-container {
     display: flex;
     flex-direction: row;

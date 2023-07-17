@@ -31,4 +31,24 @@
     width: 70%;
     margin-top: 10px;
 }
+@media screen and (max-width: 990px) {
+    .nav-container {
+      flex-direction: column;
+    }
+
+    .nav-categorie {
+        width: 70%;
+    }
+
+    .image {
+        width: 50%;
+        
+    }
+  }
+
+@media screen and (max-width: 400px) {
+    .image {
+        width: 100%;
+    }
+}
 

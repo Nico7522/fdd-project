@@ -7,20 +7,33 @@ import SearchBar from "../../components/searchbar/searchbar";
 import Sabre from "../../components/sabres/sabres";
 import sabreDetails from "../../utils/sabre-image.json";
 
+
+// Version avec concat des data et du fichier JSON pour les images
 export default function Sabres() {
   const { data, error, loading } = useFetchSabre();
   const [filteredData, setFilteredData] = useState<SabreResponse[]>([]);
+  const [allData, setAllData] = useState<SabreResponse[]>([]);
   const [page, setPage] = useState<number>(12);
   const [value, setValue] = useState<string>("");
 
   useEffect(() => {
+    let temp: SabreResponse[] = [];
     if (data) {
-      const filtered = data.filter((sabre: SabreResponse) => {
+      for (let i = 0; i < data.length; i++) {
+        temp.push(Object.assign(data[i], sabreDetails.sabreImage[i]));
+      }
+      setAllData(temp);
+    }
+  }, [data]);
+
+  useEffect(() => {
+    if (data) {
+      const filtered = allData.filter((sabre: SabreResponse) => {
         return sabre.french_name.toLowerCase().includes(value.toLowerCase());
       });
       setFilteredData(filtered);
     }
-  }, [value, data, page]);
+  }, [allData, value, page]);
 
   if (loading) {
     return <div className="loader"></div>;
@@ -32,7 +45,7 @@ export default function Sabres() {
       <SearchBar value={value} setValue={setValue} />
       <div className={style["sabres-container"]}>
         {filteredData?.slice(0, page).map((sabre: SabreResponse) => {
-          return <Sabre sabreDetails={sabreDetails.sabreImage} key={sabre.id} {...sabre} />;
+          return <Sabre key={sabre.id} {...sabre} />;
         })}
       </div>
       {value === "" && (

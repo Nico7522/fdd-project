@@ -20,3 +20,10 @@
     margin-top: 150px;
     font-family: none;
   }
+
+  @media screen and (max-width: 300px) {
+    .description {
+
+      font-size: 1.3rem;
+    }
+  }
