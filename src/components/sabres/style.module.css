@@ -133,7 +133,8 @@ button:hover {
 @media screen and (min-width: 1080px) {
  .img { width: 200px;
 
-  height: 110px;}
+  height: 110px;
+}
 
 }
 
