@@ -19,3 +19,13 @@
     width: 20%;
     background: #c93d3d;
   }
+
+  .title-normal {
+    margin-top: 5px;
+  }
+  
+  .title-black {
+    margin-top: 5px;
+    color: #fff;
+  
+  }

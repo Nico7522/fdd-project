@@ -90,6 +90,16 @@ button:hover {
   transform: translateY(-50%);
 }
 
+.title-normal {
+  margin-top: 5px;
+}
+
+.title-black {
+  margin-top: 5px;
+  color: #fff;
+
+}
+
 @media screen and (max-width: 1490px) {
   .type {
     width: 70%;

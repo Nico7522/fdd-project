@@ -1,11 +1,21 @@
 import style from "./style.module.css";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext, Dispatch, SetStateAction } from "react";
 import MenuImage from "../../images/barre-de-menu.png"
 import { NavLink, useNavigate } from "react-router-dom";
 import Home from '../../images/home.jpg'
-export default function Navbar() {
+import { Dark } from "../../App";
+
+type PropsNavBar = {
+  darkMode: boolean,
+  setDarkMode: Dispatch<SetStateAction<boolean>>
+}
+
+
+
+export default function Navbar({darkMode, setDarkMode}: PropsNavBar) {
   const [toggleMenu, setToggleMenu] = useState<boolean>(false);
   const [width, setWidth] = useState<number>(window.innerWidth)
+  const value = useContext(Dark)
   const navigation = useNavigate()
   const toggleNavSmallScreen = () => {
     setToggleMenu(!toggleMenu);
@@ -38,6 +48,7 @@ export default function Navbar() {
           <li onClick={closeMenu} className={style["items"]}><NavLink to='/fruits'>Fruits</NavLink></li>
           <li onClick={closeMenu} className={style["items"]}><NavLink to='/sabres'>Sabres</NavLink></li>
           <li onClick={closeMenu} className={style["items"]}>Iles</li>
+          <li onClick={() => setDarkMode(!darkMode)} className={style["items"]}>Dark Mode</li>
         </ul>
       )}
 

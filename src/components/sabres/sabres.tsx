@@ -2,11 +2,11 @@ import style from "./style.module.css";
 import franceLogo from "../../images/france.png";
 import japonLogo from "../../images/japon.png";
 import ModalDescription from "../modal/modal";
-import { useState } from "react";
-import sabreImage from "../../utils/sabre-image.json";
-import Yoru from "../../images/yoru.jpg";
+import { useContext, useState } from "react";
+
 import { SabreDetails } from "../../types/sabre";
 import SabreImage from "./sabres-image";
+import { Dark } from "../../App";
 type PropsSabre = {
   id: number;
   french_name: string;
@@ -29,16 +29,17 @@ export default function Sabre({
   sabreDetails
   
 }: PropsSabre) {
+  const dark = useContext(Dark)
   const [modal, setModal] = useState<boolean>(false);
 
   return (
     <div className={style["sabre-component"]}>
-      <h3>
+      <h3 className={dark ? style['title-black'] : style['title-normal']}>
         <img src={japonLogo} width={20} alt="" />
         <br />
         {roman_name}
       </h3>
-      <h4>
+      <h4 className={dark ? style['title-black'] : style['title-normal']}>
         <img src={franceLogo} width={20} alt="" />
         <br />
         {french_name}

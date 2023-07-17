@@ -31,8 +31,14 @@
   border-radius: 25px;
 }
 
-h4 {
+.title-normal {
   margin-top: 5px;
+}
+
+.title-black {
+  margin-top: 5px;
+  color: #fff;
+
 }
 
 .type {

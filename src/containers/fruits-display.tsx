@@ -1,11 +1,13 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Fruit from "../components/fruits/fruits";
 import SearchBar from "../components/searchbar/searchbar";
 import { useFetchFruit } from "../hooks/fruit";
 import style from "./style.module.css";
 import "../App.css";
 import { FruitsResponse } from "../types/fruit";
+import { Dark } from "../App";
 export default function Fruits() {
+  const dark = useContext(Dark)
   const { data, error, loading } = useFetchFruit();
   const [filteredData, setFilteredData] = useState<FruitsResponse[]>([]);
   const [page, setPage] = useState<number>(12);
@@ -24,7 +26,7 @@ export default function Fruits() {
   }
   return (
     <>
-    <h1>Les fruits du Démon</h1>
+    <h1 className={dark ? style['title-black'] : style['title-normal']}>Les fruits du Démon</h1>
       <SearchBar value={value} setValue={setValue} />
 
       <div className={style["fruits-container"]}>

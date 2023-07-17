@@ -3,6 +3,14 @@
     letter-spacing: 5px;
 }
 
+
+
+.dark {
+    margin-top: 10%;
+    letter-spacing: 5px;
+    color: #f5f3f3;
+}
+
 .nav-container {
     display: flex;
     flex-direction: row;
@@ -16,6 +24,19 @@
     margin-right: 10px;
     margin-top: 15px;
     border: solid 5px rgb(66, 58, 58);
+    background: #f5f3f3;
+    color: black;
+    border-radius: 25px ;
+    transition: margin-right 0.5s;
+}
+.nav-categorie-dark {
+    width: 20%;
+    height: 250px;
+    margin-right: 10px;
+    margin-top: 15px;
+    color: #f5f3f3;
+    background-color: #141313;
+    border: solid 5px rgb(15, 14, 14);
     border-radius: 25px ;
     transition: margin-right 0.5s;
 }

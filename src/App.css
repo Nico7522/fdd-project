@@ -8,6 +8,19 @@ h1 {
   font-family: font;
 }
 
+
+.normal {
+  background-color: #eee7e7;
+  height: 100%;
+  min-height: 100vh;
+}
+
+.dark {
+  background-color: #141313;
+  height: 100%;
+  min-height: 100vh;
+  
+}
 * {
   margin: 0;
   padding: 0;
