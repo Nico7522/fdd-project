@@ -1,0 +1,167 @@
+@font-face {
+  font-family: "font";
+  src: local("font"), url("../../fonts/one-piece-font.ttf");
+}
+
+.lieu-component {
+  border: solid gray 2px;
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  height: 300px;
+  margin: 2px;
+  text-align: center;
+}
+
+.img-container {
+  width: 100%;
+  height: 50%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* margin-top: -20px; */
+}
+
+.img {
+
+  margin: auto;
+  border-radius: 25px;
+}
+
+.title-normal {
+  margin-top: 5px;
+}
+
+.title-black {
+  margin-top: 5px;
+  color: #fff;
+}
+
+.type {
+  background: #9e1515;
+  width: 30%;
+  margin: auto;
+  margin-top: 2px;
+  font-family: font;
+  word-wrap: break-word;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+}
+
+button {
+  display: inline-block;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin: auto;
+  margin-bottom: 5px;
+  font-size: 1rem;
+  word-wrap: break-word;
+
+  border: none;
+  border-radius: 25px;
+  background-color: #131111;
+  color: #fafafa;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+.modal {
+  position: fixed;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  width: 90%;
+  height: 50%;
+  z-index: 10;
+  background-color: rgb(0, 0, 0); /* fallback for IE 8 and below */
+  background-color: rgba(0, 0, 0, 0.2);
+  text-align: center;
+  /* background: #000; */
+  font-family: font;
+  font-size: 1.5rem;
+  top: 40%;
+  left: 0px;
+  transform: translateY(-50%);
+}
+
+@media screen and (max-width: 1650px) {
+  .type {
+    width: 60%;
+  }
+}
+@media screen and (max-width: 1490px) {
+  .type {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .lieu-component {
+    max-width: 100% !important;
+
+    width: 100%;
+  }
+  .type {
+    width: 30%;
+  }
+  .btn-description {
+    width: 30%;
+  }
+
+}
+
+
+
+@media screen and (min-width: 375px) {
+    .img {
+      width: 85%;
+  
+      height: 150px;
+    }
+  }
+
+@media screen and (min-width: 500px) {
+    .img {
+      width: 300px;
+      height: 150px;
+    }
+  }
+@media screen and (min-width: 850px) {
+    .img {
+      width: 100%;
+      height: 100px;
+    }
+  }
+@media screen and (min-width: 1000px) {
+    .img {
+      width: 200px;
+      height: 100px;
+    }
+  }
+@media screen and (min-width: 1400px) {
+    .img {
+      width: 250px;
+      height: 125px;
+    }
+  }
+
+@media screen and (max-width: 375px) {
+  .type {
+    width: 50%;
+  }
+  .btn-description {
+    width: 40%;
+  }
+  .img {
+    width: 100%;
+    height: auto;
+  }
+}

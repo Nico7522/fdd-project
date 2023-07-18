@@ -6,3 +6,8 @@ export type LieuResponse = {
     region_name: string;
     affiliation_name: string;
 }
+
+export type IlesDetails = {
+    name: string;
+    link: string;
+}

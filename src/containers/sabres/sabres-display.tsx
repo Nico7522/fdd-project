@@ -33,7 +33,7 @@ export default function Sabres() {
       <SearchBar value={value} setValue={setValue} />
       <div className={style["sabres-container"]}>
         {filteredData?.slice(0, page).map((sabre: SabreResponse) => {
-          return <Sabre sabreDetails={sabreDetails.sabreImage} key={sabre.id} {...sabre} />;
+          return <Sabre  key={sabre.id} {...sabre} />;
         })}
       </div>
       {value === "" && (
