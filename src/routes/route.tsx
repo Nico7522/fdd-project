@@ -4,6 +4,7 @@ import  { RouteObject } from 'react-router';
 import HomePage from "../pages/home/home-page";
 import SabresPage from "../pages/sabres/sabres";
 import Test from "../utils/concat";
+import LieuxPage from "../pages/lieux/lieux-page";
 
 
 export const routes: RouteObject[] = [
@@ -23,6 +24,10 @@ export const routes: RouteObject[] = [
             {
                 path: "sabres",
                 element: <SabresPage />
+            },
+            {
+                path: "lieux",
+                element: <LieuxPage />
             },
             {
                 path: "test",

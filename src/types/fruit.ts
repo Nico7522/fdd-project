@@ -5,5 +5,6 @@ export type FruitsResponse = {
     description: string;
     technical_file: null;
     type: string;
-    filename: string
+    filename: string,
+    
 }

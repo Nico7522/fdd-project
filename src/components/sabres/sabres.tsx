@@ -3,8 +3,7 @@ import franceLogo from "../../images/france.png";
 import japonLogo from "../../images/japon.png";
 import ModalDescription from "../modal/modal";
 import { useContext, useState } from "react";
-
-import { SabreDetails } from "../../types/sabre";
+import sabreDetails from "../../utils/sabre-image.json";
 import SabreImage from "./sabres-image";
 import { Dark } from "../../App";
 type PropsSabre = {
@@ -15,7 +14,7 @@ type PropsSabre = {
   category: string;
   description: string;
   is_destroy: boolean;
-  sabreDetails: SabreDetails[]
+
 };
 
 export default function Sabre({
@@ -26,7 +25,6 @@ export default function Sabre({
   category,
   description,
   is_destroy,
-  sabreDetails
   
 }: PropsSabre) {
   const dark = useContext(Dark)
@@ -46,7 +44,7 @@ export default function Sabre({
       </h4>
       <p className={style["type"]}>{type ? type : "Inconnu"}</p>
    
-      <SabreImage sabreDetails={sabreDetails} frenchName={french_name} />
+      <SabreImage sabreDetails={sabreDetails.sabreImage} frenchName={french_name} />
       <button
         className={style["btn-description"]}
         onClick={() => setModal(!modal)}

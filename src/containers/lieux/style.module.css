@@ -1,0 +1,32 @@
+.lieux-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+   
+  }
+  
+  .next-data {
+    margin-top: 15px;
+    width: 20%;
+    background: #c93d3d;
+  }
+  
+  .title-normal {
+    margin-top: 5px;
+  }
+  
+  .title-black {
+    margin-top: 5px;
+    color: #fff;
+  
+  }
+  
+  @media screen and (max-width: 600px) {
+    /* .fruits-container {
+     
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    } */
+  }

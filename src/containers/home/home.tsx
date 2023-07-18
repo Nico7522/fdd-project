@@ -3,7 +3,7 @@ import sabre from "../../images/sabre.jpg";
 import ile from "../../images/ile.jpg";
 import fruit from "../../images/allfruits.jpg";
 import { NavLink } from "react-router-dom";
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import { Dark } from "../../App";
 export default function Home() {
     const dark = useContext(Dark);
@@ -29,7 +29,6 @@ export default function Home() {
 
 const FruitsNavigation = () => {
   const dark = useContext(Dark);
-  const darkModeActive = localStorage.getItem("darkMode");
 
   return (
     <div
@@ -51,7 +50,6 @@ const FruitsNavigation = () => {
 
 const SabresNavigation = () => {
   const dark = useContext(Dark);
-  const darkModeActive = localStorage.getItem("darkMode");
 
   return (
     <div
@@ -73,7 +71,6 @@ const SabresNavigation = () => {
 
 const IlesNavigation = () => {
   const dark = useContext(Dark);
-  const darkModeActive = localStorage.getItem("darkMode");
   return (
     <div
       className={
@@ -82,8 +79,8 @@ const IlesNavigation = () => {
           : style["nav-categorie"]
       }
     >
-      <NavLink to={"fruits"}>
-        <h3>Voir la liste des îles</h3>
+      <NavLink to={"lieux"}>
+        <h3>Voir la liste des lieux</h3>
         <div className={style["image-container"]}>
           <img className={style["image"]} src={ile} height={150} alt="" />
         </div>

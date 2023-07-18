@@ -44,14 +44,14 @@ a, a:visited, a:hover, a:active {
 @media screen and (max-width: 500px) {
     .liste {
         flex-direction: column;
-        height: 200px;
+        height: 257px;
         margin: 0;
         padding: 0;
         
     }
 
     .items:nth-child(1) {
-        border-top: 1px solid #fff;
+        /* border-top: 1px solid #fff; */
         margin-top: 50px;
         
     }

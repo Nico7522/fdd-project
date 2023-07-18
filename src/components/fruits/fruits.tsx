@@ -13,11 +13,12 @@ export default function Fruit({
   technical_file,
   type,
   filename,
+  
 }: FruitsResponse) {
   const dark = useContext(Dark)
   const [modal, setModal] = useState<boolean>(false);
   return (
-    <div className={style["fruit-component"]}>
+    <div  className={style["fruit-component"]}>
       <h3 className={dark ? style['title-black'] : style['title-normal']}>
         <img src={japonLogo} width={20} alt="" />
         <br />

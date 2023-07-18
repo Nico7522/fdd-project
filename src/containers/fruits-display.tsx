@@ -31,7 +31,7 @@ export default function Fruits() {
 
       <div className={style["fruits-container"]}>
         {filteredData?.slice(0, page).map((fruit: FruitsResponse) => {
-          return <Fruit {...fruit} />;
+          return <Fruit key={fruit.id} {...fruit} />;
         })}
       </div>
       {value === "" && (
