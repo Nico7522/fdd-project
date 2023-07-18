@@ -11,7 +11,6 @@ function App() {
   const [darkMode, setDarkMode] = useState<boolean>(storedDarkMode);
 
   useEffect(() => {
-    // console.log('coucou 2');
     localStorage.setItem("darkMode", JSON.stringify(darkMode));
   }, [darkMode]);
 

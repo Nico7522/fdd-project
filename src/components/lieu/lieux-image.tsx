@@ -6,7 +6,7 @@ type PropsIleImage = {
 }
 
 export default function LieuImages({ LieuDetails, frenchName }: PropsIleImage){
-    console.log(LieuDetails);
+    
     
     return (
         <div className={style['img-container']}>

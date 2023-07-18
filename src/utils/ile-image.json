@@ -9,24 +9,110 @@
             "link": "../images/shellTown.jpg"
         },
         {
-            "name": "dqdqds",
-            "link": "../images/shellTown.jpg"
+            "name": "Shimotsuki",
+            "link": "../images/shimotsuki.jpg"
         },
         {
-            "name": "dqdqds",
-            "link": "../images/shellTown.jpg"
+            "name": "Archipel des Argao",
+            "link": "../images/archipeldesArgao.jpg"
         },
         {
-            "name": "dqdqds",
-            "link": "../images/shellTown.jpg"
+            "name": "Île des Animaux Rares",
+            "link": "../images/iledesAnimauxRares.jpg"
         },
         {
-            "name": "dqdqds",
-            "link": "../images/shellTown.jpg"
+            "name": "Baratie",
+            "link": "../images/baratie.jpg"
         },
         {
-            "name": "dqdqds",
-            "link": "../images/shellTown.jpg"
+            "name": "Logue Town",
+            "link": "../images/logueTown.jpg"
+        },
+        {
+            "name": "Île Mirrorball",
+            "link": "../images/ileMirrorball.jpg"
+        },
+        {
+            "name": "Tequila Wolf",
+            "link": "../images/tequilaWolf.jpg"
+        },
+        {
+            "name": "Royaume d'Oykot",
+            "link": "../images/royaumeOykot.jpg"
+        },
+        {
+            "name": "Royaume de Goa",
+            "link": "../images/royaumedeGoa.jpg"
+        },
+        {
+            "name": "Grey Terminal",
+            "link": "../images/grayTerminal.jpg"
+        },
+        {
+            "name": "Forêt du Milieu",
+            "link": "../images/forêtduMilieu.jpg"
+        },
+        {
+            "name": "Village de Fuchsia",
+            "link": "../images/VillagedeFuchsia.jpg"
+        },
+        {
+            "name": "Mont Corvo",
+            "link": "../images/Montcorvo.jpg"
+        },
+        {
+            "name": "Village de Sirop",
+            "link": "../images/villagedeSirop.jpg"
+        },
+        {
+            "name": "Arlong Park",
+            "link": "../images/arlongPark.jpg"
+        },
+        {
+            "name": "Village de Kokoyashi",
+            "link": "../images/villagedeKokoyashi.jpg"
+        },
+        {
+            "name": "Village de Gsa",
+            "link": "../images/villagedeGsa.jpg"
+        },
+        {
+            "name": "Royaume d'Ilisia",
+            "link": "../images/inconnu.jpg"
+        },
+        {
+            "name": "Ohara",
+            "link": "../images/ohara.jpg"
+        },
+        {
+            "name": "Île de Toroa",
+            "link": "../images/inconnu.jpg"
+        },
+        {
+            "name": "Las Camp",
+            "link": "../images/Lascamp.jpg"
+        },
+        {
+            "name": "Thriller Bark",
+            "link": "../images/thrillerBark.jpg"
+        },
+        {
+            "name": "Royaume de Luvneel",
+            "link": "../images/royaumedeLuvneel.jpg"
+        },
+        {
+            "name": "Île de Micqueot",
+            "link": "../images/iledemicqueot.jpg"
+        },
+        {
+            "name": "Spider Miles",
+            "link": "../images/spiderMile.jpg"
+        },
+        {
+            "name": "Flevance",
+            "link": "../images/flevance.jpg"
         }
+
+   
     ]
 }
