@@ -1,0 +1,59 @@
+@keyframes move {
+  0% {
+    right: 0px;
+  }
+  25% {
+    right: 200px;
+  }
+  50% {
+    right: 200px;
+  }
+  75% {
+    right: 0px;
+  }
+  100% {
+    right: 0px;
+    opacity: 0;
+  }
+}
+
+/* The element to apply the animation to */
+.divContainer {
+  width: 70%;
+  height: 350px;
+  position: absolute;
+  margin: auto;
+  background-color: rgb(190, 177, 177);
+  top: 50%;
+  left: 50%;
+  right: 0%;
+  transform: translate(-50%, -50%);
+  transition: 1s linear left;
+}
+
+.divContainer2 {
+  width: 70%;
+  height: 350px;
+  position: absolute;
+  margin: auto;
+  background-color: rgb(190, 177, 177);
+  top: 50%;
+  left: 50%;
+  right: -50%;
+
+  transform: translate(-50%, -50%);
+  transition: right linear 1s;
+}
+
+.move {
+  left: -100%;
+}
+
+.move-come {
+  right: 0%;
+}
+
+.div {
+  width: 100%;
+  margin: auto;
+}
