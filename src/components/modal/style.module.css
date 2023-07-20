@@ -17,8 +17,9 @@
   }
   
   .description {
-    margin-top: 150px;
+    margin-top: 30px;
     font-family: none;
+    margin-bottom: 10px;
   }
 
   @media screen and (max-width: 300px) {

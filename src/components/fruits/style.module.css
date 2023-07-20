@@ -77,7 +77,7 @@ button:hover {
   left: 0;
   right: 0;
   width: 90%;
-  height: 50%;
+  height: auto;
   z-index: 10;
   background-color: rgb(0, 0, 0); /* fallback for IE 8 and below */
   background-color: rgba(0, 0, 0, 0.2);
