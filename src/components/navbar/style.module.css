@@ -47,6 +47,7 @@ a, a:visited, a:hover, a:active {
         height: 257px;
         margin: 0;
         padding: 0;
+        z-index: 1;
         
     }
 

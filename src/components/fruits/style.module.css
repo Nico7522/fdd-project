@@ -105,17 +105,19 @@ button:hover {
     width: 70%;
   }
 }
+
 @media screen and (max-width: 800px) {
   .fruit-component {
     max-width: 100% !important;
     width: 100%;
   }
-
+  
+  
   .type {
     width: 30%;
   }
   .btn-description {
-    width: 30%;
+    width: 20%;
   }
 }
 
