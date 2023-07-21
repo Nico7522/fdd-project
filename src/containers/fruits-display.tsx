@@ -11,10 +11,6 @@ export default function Fruits() {
   const dark = useContext(Dark);
   const { data, error, loading } = useFetchFruit();
   const [filteredData, setFilteredData] = useState<FruitsResponse[]>([]);
-  const [filteredCategorie, setFilteredCategorie] = useState<FruitsResponse[]>(
-    []
-  );
-  const [isfiltred, setIsFiltred] = useState<boolean>(false);
   const [page, setPage] = useState<number>(12);
   const [value, setValue] = useState<string>("");
   const [categorie, setCategorie] = useState<string>("all");
