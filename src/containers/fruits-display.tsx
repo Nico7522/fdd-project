@@ -11,33 +11,34 @@ export default function Fruits() {
   const dark = useContext(Dark);
   const { data, error, loading } = useFetchFruit();
   const [filteredData, setFilteredData] = useState<FruitsResponse[]>([]);
+  const [filteredCategorie, setFilteredCategorie] = useState<FruitsResponse[]>(
+    []
+  );
+  const [isfiltred, setIsFiltred] = useState<boolean>(false);
   const [page, setPage] = useState<number>(12);
   const [value, setValue] = useState<string>("");
   const [categorie, setCategorie] = useState<string>("all");
 
-  useEffect(() => {
-   console.log(categorie);
-   
-    
-    if (data) {
-      if (categorie !== "all") {
-        const filteredCategorie = data.filter((fruit: FruitsResponse) => {
-          return fruit.type.toLowerCase() === categorie;
-        });
-        const filtered = filteredCategorie.filter((fruit: FruitsResponse) => {
-          return fruit.french_name.toLowerCase().includes(value.toLowerCase());
-        });
-        setFilteredData(filtered);
-      } else if (categorie === "all") {
-        const filtered = data.filter((fruit: FruitsResponse) => {
-          return fruit.french_name.toLowerCase().includes(value.toLowerCase());
-        });
-        setFilteredData(filtered);
-      }
-      {
-      }
+ useEffect(() => {
+  console.log(categorie);
+
+  if (data) {
+    if (categorie !== "all") {
+      const filteredCategorie = data.filter((fruit: FruitsResponse) => {
+        return fruit.type.toLowerCase() === categorie;
+      });
+      const filtered = filteredCategorie.filter((fruit: FruitsResponse) => {
+        return fruit.french_name.toLowerCase().includes(value.toLowerCase());
+      });
+      setFilteredData(filtered);
+    } else if (categorie === "all") {
+      const filtered = data.filter((fruit: FruitsResponse) => {
+        return fruit.french_name.toLowerCase().includes(value.toLowerCase());
+      });
+      setFilteredData(filtered);
     }
-  }, [value, data, page, categorie]);
+  }
+}, [value, data, page, categorie]);
 
   if (loading) {
     return <div className="loader"></div>;
@@ -66,3 +67,5 @@ export default function Fruits() {
     </>
   );
 }
+
+

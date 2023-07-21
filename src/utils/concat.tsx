@@ -4,36 +4,45 @@
 // import { SabreResponse } from "../types/sabre";
 import { useState } from "react";
 import style from "./style.module.css";
-export default function Test() {
-  const [page1, setPage1] = useState(true);
-  const [page2, setPage2] = useState(false);
-  const [move, setMove] = useState(false);
+import "../App.css";
 
-  const movFirstDiv = () => {
+export default function Test() {
+  const [page, setPage] = useState<string>("page1");
+  const [onMove, setOnMove] = useState<boolean>(false);
+  const [loading, setLoading] = useState<string>('')
+  console.log(page);
+  
+
+  const moveFirstDiv = () => {
     return new Promise<void>((resolve, reject) => {
-      setPage1(false);
+      setOnMove(true);
       setTimeout(() => {
-        setMove(false);
-        setPage2(true);
+        setOnMove(false);
+        setPage('page2')
         resolve();
-      }, 2000);
+      }, 500);
     });
   };
 
   const divMoving = async () => {
-    await movFirstDiv();
+    await moveFirstDiv();
+    setLoading('loading')
+    
     setTimeout(() => {
-      console.log("dsdd");
-
-      setMove(true);
-    }, 50);
+      setLoading('loaded')
+    }, 700);
+    setTimeout(() => {
+     
+      setOnMove(true);
+    }, 800);
   };
   return (
     <div className={style["div"]}>
-      {page2 === false && (
+      {loading === "loading" && <div className="loader"></div> }
+      {page === "page1" && (
         <div
           className={
-            style["divContainer"] + " " + (!page1 ? style["move"] : "")
+            style["divContainer"] + " " + (onMove === true ? style["move"] : "")
           }
         >
           <p>sqsqssqs</p>
@@ -41,10 +50,10 @@ export default function Test() {
           <p>sqsqssqs</p>
         </div>
       )}
-      {page2 === true && (
+      {page === "page2" && loading !== "loading" && (
         <div
           className={
-            style["divContainer2"] + " " + (move ? style["move-come"] : "")
+            style["divContainer2"] + " " + (onMove ? style["move-come"] : "")
           }
         >
           <p>sqsqssqs</p>
