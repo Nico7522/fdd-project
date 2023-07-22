@@ -16,8 +16,6 @@ export default function Fruits() {
   const [categorie, setCategorie] = useState<string>("all");
 
  useEffect(() => {
-  console.log(categorie);
-
   if (data) {
     if (categorie !== "all") {
       const filteredCategorie = data.filter((fruit: FruitsResponse) => {

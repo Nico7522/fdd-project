@@ -12,30 +12,43 @@ export default function Lieux() {
   const [filteredData, setFilteredData] = useState<LieuResponse[]>([]);
   const [page, setPage] = useState<number>(12);
   const [value, setValue] = useState<string>("");
-  const [filter, setFilter] = useState<string>("");
+  const [filter, setFilter] = useState<string>("all");
   const [className, setClassName] = useState<boolean>(false);
-
+  const [selectedLieu, setSelectedLieu ] = useState<string>('')
   console.log(filter);
 
   const dark = useContext(Dark);
 
   useEffect(() => {
-    console.log('coucou');
-    
-    if (filter !== "") {
+    if (filter !== "all") {
       setClassName(true);
-   
     }
+    return () => {
+         setClassName(false)
+       }
    
   }, [filter]);
   useEffect(() => {
     if (data) {
-      const filtered = data.filter((sabre: LieuResponse) => {
-        return sabre.french_name.toLowerCase().includes(value.toLowerCase());
-      });
-      setFilteredData(filtered);
+      if (filter === "oceans") {
+        const filteredLieu = data.filter((lieu: LieuResponse) => {
+          return lieu.sea_name.toLowerCase().includes(selectedLieu.toLowerCase())
+        })
+        const filtered = filteredLieu.filter((lieu: LieuResponse) => {
+          return lieu.french_name.toLowerCase().includes(value.toLowerCase());
+        });
+        setFilteredData(filtered);
+      } else {
+        const filtered = data.filter((lieu: LieuResponse) => {
+          return lieu.french_name.toLowerCase().includes(value.toLowerCase());
+        });
+        setFilteredData(filtered);
+
+      }
+
+
     }
-  }, [value, data, page]);
+  }, [value, data, page, selectedLieu]);
 
   if (loading) {
     return <div className="loader"></div>;
@@ -43,29 +56,48 @@ export default function Lieux() {
 
   return (
     <>
+    
       <h1 className={dark ? style["title-black"] : style["title-normal"]}>
         Les lieux
       </h1>
       <SearchBar value={value} setValue={setValue} />
       <div className={style["multiselect-container"]}>
+        {/* TODO: faire un composant pour le select */}
         <div
           className={
             style["select-dropdown"] + " " + (dark ? style["dark"] : "")
           }
         >
-          <select onChange={(e) => setFilter(e.target.value)} name="" id="">
-            <option value="region">Océans</option>
-            <option value="oceans">Région</option>
-            <option value="grandline">Grand Line</option>
-            <option value="nouveau-monde">Nouveau Monde</option>
+          <select onChange={(e) => setFilter(e.target.value)}>
+            <option value="all">All</option>
+            <option value="oceans">Océans</option>
+            <option value="regions">Régions</option>
+      
           </select>
         </div>
+        {/*TODO: faire un composant avec ENUM pour la liste des océans*/ }
         {filter === "oceans" && (
           <div className={style["selected-item"]}>
             <ul className={ style['base-ul'] + " " + (className ? style['show'] : " ")}>
-              <li>Nord Blue</li>
-              <li>Sud Blue</li>
-              <li>West Blue</li>
+              <li onClick={() => setSelectedLieu('East Blue')}>East Blue</li>
+              <li onClick={() => setSelectedLieu('West Blue')}>West Blue</li>
+              <li onClick={() => setSelectedLieu('North Blue')}>North Blue</li>
+              <li onClick={() => setSelectedLieu('North Blue')}>South Blue</li>
+              <li onClick={() => setSelectedLieu('North Blue')}> Red Line</li>
+              <li onClick={() => setSelectedLieu('North Blue')}>Calm Belt</li>
+              <li onClick={() => setSelectedLieu('North Blue')}>Paradis</li>
+              <li onClick={() => setSelectedLieu('North Blue')}>Nouveau Monde</li>
+            </ul>
+          </div>
+        )}
+        {/*TODO: faire un composant avec ENUM pour la liste des régions*/ }
+        {filter === "regions" && (
+            <div className={style["selected-item"]}>
+            <ul className={ style['base-ul'] + " " + (className ? style['show'] : " ")}>
+              <li>Île de Dawn</li>
+              <li>Archipel des Gekko</li>
+              <li>Archipel de Konomi</li>
+              <li>Grand Line</li>
             </ul>
           </div>
         )}

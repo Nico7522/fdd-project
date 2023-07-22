@@ -77,7 +77,11 @@
 
   .multiselect-container {
     margin: auto;
-    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+ 
   }
   
   .selected-item {
@@ -86,15 +90,28 @@
   }
 .base-ul {
   color: #fff;
-  /* display: none; */
-  margin-top: -5px;
-  transition: ease-in 0.5s margin-top;
+  margin-top: -15px;
+  width: 200px;
+ 
+  border: 1px solid white;
+  border-radius: 10px;
+  transition: ease-in 0.2s margin-top;
 
 }
+
 .show {
   margin-top: 5px;
   display: block;
-  }
+}
+.base-ul > li {
+  list-style-type: none;
+  border-bottom: 1px solid #fff;
+  padding: 5px;
+}
+.show > li:hover {
+  cursor: pointer;
+  background: linear-gradient(45deg, rgb(156,14,156), midnightblue);
+}
   
   @media screen and (max-width: 600px) {
     /* .fruits-container {
