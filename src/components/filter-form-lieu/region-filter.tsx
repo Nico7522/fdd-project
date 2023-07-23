@@ -1,4 +1,4 @@
-import React, { Dispatch, MouseEvent, SetStateAction, useState } from "react";
+import { Dispatch, MouseEvent, SetStateAction} from "react";
 import style from "./style.module.css";
 
 type PropsReginFilter = {
@@ -11,9 +11,7 @@ type PropsReginFilter = {
 export default function RegionFilter({
   className,
   setSelectedLieu,
-  setFilter,
   setShow,
-  show,
 }: PropsReginFilter) {
   const handleLieu = (e: MouseEvent) => {
     const value = e.target as HTMLLIElement;
