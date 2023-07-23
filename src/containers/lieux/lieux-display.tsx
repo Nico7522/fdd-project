@@ -1,4 +1,4 @@
-import {  MouseEvent, useContext, useEffect, useState } from "react";
+import { MouseEvent, useContext, useEffect, useState } from "react";
 import style from "./style.module.css";
 import "../../App.css";
 
@@ -25,6 +25,8 @@ export default function Lieux() {
     }
     return () => {
       setClassName(false);
+      setPage(12)
+      setSelectedLieu('')
     };
   }, [filter]);
   useEffect(() => {
@@ -39,6 +41,16 @@ export default function Lieux() {
           return lieu.french_name.toLowerCase().includes(value.toLowerCase());
         });
         setFilteredData(filtered);
+      } else if (filter === "regions") {
+        const filteredLieu = data.filter((lieu: LieuResponse) => {
+          return lieu.region_name
+            .toLowerCase()
+            .includes(selectedLieu.toLowerCase());
+        });
+        const filtered = filteredLieu.filter((lieu: LieuResponse) => {
+          return lieu.french_name.toLowerCase().includes(value.toLowerCase());
+        });
+        setFilteredData(filtered);
       } else {
         const filtered = data.filter((lieu: LieuResponse) => {
           return lieu.french_name.toLowerCase().includes(value.toLowerCase());
@@ -46,19 +58,12 @@ export default function Lieux() {
         setFilteredData(filtered);
       }
     }
-  }, [value, data, page, selectedLieu]);
+  }, [value, data, page, selectedLieu, filter]);
 
   if (loading) {
     return <div className="loader"></div>;
   }
-  const handlechange = (e: MouseEvent<HTMLLIElement>) => {
-    const targetEl = e.target as HTMLElement
-   
-     console.log(targetEl.innerHTML);
-    
-   
-    
-  }
+
   return (
     <>
       <h1 className={dark ? style["title-black"] : style["title-normal"]}>
@@ -86,29 +91,14 @@ export default function Lieux() {
                 style["base-ul"] + " " + (className ? style["show"] : " ")
               }
             >
-              <li
-                onMouseEnter={handlechange}
-                onClick={() => setSelectedLieu("East Blue")}
-              >
-                East Blue
-              </li>
-              <li
-                onMouseEnter={(e) => console.log(e)}
-                onClick={() => setSelectedLieu("West Blue")}
-              >
-                West Blue
-              </li>
-              <li
-                onMouseEnter={(e) => console.log(e)}
-                onClick={() => setSelectedLieu("North Blue")}
-              >
-                North Blue
-              </li>
-              <li onClick={() => setSelectedLieu("North Blue")}>South Blue</li>
-              <li onClick={() => setSelectedLieu("North Blue")}> Red Line</li>
-              <li onClick={() => setSelectedLieu("North Blue")}>Calm Belt</li>
-              <li onClick={() => setSelectedLieu("North Blue")}>Paradis</li>
-              <li onClick={() => setSelectedLieu("North Blue")}>
+              <li onClick={() => setSelectedLieu("East Blue")}>East Blue</li>
+              <li onClick={() => setSelectedLieu("West Blue")}>West Blue</li>
+              <li onClick={() => setSelectedLieu("North Blue")}>North Blue</li>
+              <li onClick={() => setSelectedLieu("South Blue")}>South Blue</li>
+              <li onClick={() => setSelectedLieu("Red Line")}>Red Line</li>
+              <li onClick={() => setSelectedLieu("Calm Belt")}>Calm Belt</li>
+              <li onClick={() => setSelectedLieu("Paradis")}>Paradis</li>
+              <li onClick={() => setSelectedLieu("Nouveau Monde")}>
                 Nouveau Monde
               </li>
             </ul>
