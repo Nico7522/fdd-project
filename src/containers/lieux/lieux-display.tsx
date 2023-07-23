@@ -7,6 +7,9 @@ import { usefetchLieu } from "../../hooks/lieu";
 import { LieuResponse } from "../../types/lieu";
 import { Dark } from "../../App";
 import SearchBar from "../../components/searchbar/searchbar";
+import GeneralFilter from "../../components/filter-form-lieu/general-filter";
+import OceanFilter from "../../components/filter-form-lieu/ocean-filter";
+import RegionFilter from "../../components/filter-form-lieu/region-filter";
 export default function Lieux() {
   const { data, error, loading } = usefetchLieu();
   const [filteredData, setFilteredData] = useState<LieuResponse[]>([]);
@@ -15,7 +18,7 @@ export default function Lieux() {
   const [filter, setFilter] = useState<string>("all");
   const [className, setClassName] = useState<boolean>(false);
   const [selectedLieu, setSelectedLieu] = useState<string>("");
-  console.log(filter);
+  const [show, setShow] = useState(true);
 
   const dark = useContext(Dark);
 
@@ -23,12 +26,14 @@ export default function Lieux() {
     if (filter !== "all") {
       setClassName(true);
     }
+
     return () => {
       setClassName(false);
-      setPage(12)
-      setSelectedLieu('')
+      setPage(12);
+      setSelectedLieu("");
     };
   }, [filter]);
+
   useEffect(() => {
     if (data) {
       if (filter === "oceans") {
@@ -71,53 +76,21 @@ export default function Lieux() {
       </h1>
       <SearchBar value={value} setValue={setValue} />
       <div className={style["multiselect-container"]}>
-        {/* TODO: faire un composant pour le select */}
-        <div
-          className={
-            style["select-dropdown"] + " " + (dark ? style["dark"] : "")
-          }
-        >
-          <select onChange={(e) => setFilter(e.target.value)}>
-            <option value="all">All</option>
-            <option value="oceans">Océans</option>
-            <option value="regions">Régions</option>
-          </select>
-        </div>
-        {/*TODO: faire un composant avec ENUM pour la liste des océans*/}
+        <GeneralFilter setFilter={setFilter} show={show} setShow={setShow} />
         {filter === "oceans" && (
-          <div className={style["selected-item"]}>
-            <ul
-              className={
-                style["base-ul"] + " " + (className ? style["show"] : " ")
-              }
-            >
-              <li onClick={() => setSelectedLieu("East Blue")}>East Blue</li>
-              <li onClick={() => setSelectedLieu("West Blue")}>West Blue</li>
-              <li onClick={() => setSelectedLieu("North Blue")}>North Blue</li>
-              <li onClick={() => setSelectedLieu("South Blue")}>South Blue</li>
-              <li onClick={() => setSelectedLieu("Red Line")}>Red Line</li>
-              <li onClick={() => setSelectedLieu("Calm Belt")}>Calm Belt</li>
-              <li onClick={() => setSelectedLieu("Paradis")}>Paradis</li>
-              <li onClick={() => setSelectedLieu("Nouveau Monde")}>
-                Nouveau Monde
-              </li>
-            </ul>
-          </div>
+          <OceanFilter
+            className={className}
+            setSelectedLieu={setSelectedLieu}
+          />
         )}
-        {/*TODO: faire un composant avec ENUM pour la liste des régions*/}
-        {filter === "regions" && (
-          <div className={style["selected-item"]}>
-            <ul
-              className={
-                style["base-ul"] + " " + (className ? style["show"] : " ")
-              }
-            >
-              <li>Île de Dawn</li>
-              <li>Archipel des Gekko</li>
-              <li>Archipel de Konomi</li>
-              <li>Grand Line</li>
-            </ul>
-          </div>
+        {filter === "regions" && show && (
+          <RegionFilter
+            className={className}
+            show={show}
+            setSelectedLieu={setSelectedLieu}
+            setFilter={setFilter}
+            setShow={setShow}
+          />
         )}
       </div>
       <div className={style["lieux-container"]}>
