@@ -17,7 +17,7 @@ type PropsGereralFilter = {
 export default function GeneralFilter({
   setFilter,
   setShow,
-  show,
+ 
 }: PropsGereralFilter) {
   const dark = useContext(Dark);
   const [isOpen, setIsOpen] = useState(false);

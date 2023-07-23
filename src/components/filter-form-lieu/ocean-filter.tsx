@@ -1,4 +1,4 @@
-import React, { Dispatch, MouseEvent, SetStateAction } from 'react'
+import { Dispatch, MouseEvent, SetStateAction } from 'react'
 import style from './style.module.css'
 
 type PropsOceanFilter = {
