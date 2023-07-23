@@ -1,11 +1,17 @@
-import React, { Dispatch, SetStateAction } from 'react'
+import React, { Dispatch, MouseEvent, SetStateAction } from 'react'
 import style from './style.module.css'
 
 type PropsOceanFilter = {
     className: boolean,
-    setSelectedLieu: Dispatch<SetStateAction<string>>
+    setSelectedLieu: Dispatch<SetStateAction<string>>;
+    setShow: Dispatch<SetStateAction<boolean>>;
 }
-export default function OceanFilter({className, setSelectedLieu}: PropsOceanFilter) {
+export default function OceanFilter({className, setSelectedLieu, setShow}: PropsOceanFilter) {
+    const handleLieu = (e: MouseEvent) => {
+        const value = e.target as HTMLLIElement;
+        setSelectedLieu(value.innerHTML);
+        setShow(false);
+      };
   return (
     <div className={style["selected-item"]}>
     <ul
@@ -13,14 +19,14 @@ export default function OceanFilter({className, setSelectedLieu}: PropsOceanFilt
         style["base-ul"] + " " + (className ? style["show"] : " ")
       }
     >
-      <li onClick={() => setSelectedLieu("East Blue")}>East Blue</li>
-      <li onClick={() => setSelectedLieu("West Blue")}>West Blue</li>
-      <li onClick={() => setSelectedLieu("North Blue")}>North Blue</li>
-      <li onClick={() => setSelectedLieu("South Blue")}>South Blue</li>
-      <li onClick={() => setSelectedLieu("Red Line")}>Red Line</li>
-      <li onClick={() => setSelectedLieu("Calm Belt")}>Calm Belt</li>
-      <li onClick={() => setSelectedLieu("Paradis")}>Paradis</li>
-      <li onClick={() => setSelectedLieu("Nouveau Monde")}>
+      <li onClick={(e) => handleLieu(e)}>East Blue</li>
+      <li onClick={(e) => handleLieu(e)}>West Blue</li>
+      <li onClick={(e) => handleLieu(e)}>North Blue</li>
+      <li onClick={(e) => handleLieu(e)}>South Blue</li>
+      <li onClick={(e) => handleLieu(e)}>Red Line</li>
+      <li onClick={(e) => handleLieu(e)}>Calm Belt</li>
+      <li onClick={(e) => handleLieu(e)}>Paradis</li>
+      <li onClick={(e) => handleLieu(e)}>
         Nouveau Monde
       </li>
     </ul>

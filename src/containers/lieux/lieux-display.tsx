@@ -77,10 +77,11 @@ export default function Lieux() {
       <SearchBar value={value} setValue={setValue} />
       <div className={style["multiselect-container"]}>
         <GeneralFilter setFilter={setFilter} show={show} setShow={setShow} />
-        {filter === "oceans" && (
+        {filter === "oceans" && show && (
           <OceanFilter
             className={className}
             setSelectedLieu={setSelectedLieu}
+            setShow={setShow}
           />
         )}
         {filter === "regions" && show && (
