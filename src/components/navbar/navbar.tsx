@@ -1,9 +1,9 @@
 import style from "./style.module.css";
-import React, { useState, useEffect, useContext, Dispatch, SetStateAction } from "react";
+import { useState, useEffect, Dispatch, SetStateAction } from "react";
 import MenuImage from "../../images/barre-de-menu.png"
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import Home from '../../images/home.jpg'
-import { Dark } from "../../App";
+
 
 type PropsNavBar = {
   darkMode: boolean,
@@ -15,8 +15,6 @@ type PropsNavBar = {
 export default function Navbar({darkMode, setDarkMode}: PropsNavBar) {
   const [toggleMenu, setToggleMenu] = useState<boolean>(false);
   const [width, setWidth] = useState<number>(window.innerWidth)
-  const value = useContext(Dark)
-  const navigation = useNavigate()
   const toggleNavSmallScreen = () => {
     setToggleMenu(!toggleMenu);
   };

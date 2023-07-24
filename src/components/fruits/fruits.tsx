@@ -6,11 +6,9 @@ import ModalDescription from "../modal/modal";
 import { useContext, useState } from "react";
 import { Dark } from "../../App.tsx";
 export default function Fruit({
-  id,
   roman_name,
   french_name,
   description,
-  technical_file,
   type,
   filename,
   

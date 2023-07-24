@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import { useContext } from "react";
 import LieuDetails from "../../utils/ile-image.json";
 import style from "./style.module.css";
 import { Dark } from "../../App";
@@ -8,15 +8,10 @@ import { LieuResponse } from "../../types/lieu";
 
 import LieuImages from "./lieux-image";
 export default function Lieu({
-  id,
   french_name,
   roman_name,
-  sea_name,
-  region_name,
-  affiliation_name,
 }: LieuResponse) {
   const dark = useContext(Dark);
-  const [modal, setModal] = useState<boolean>(false);
   return (
     <>
       <div></div>

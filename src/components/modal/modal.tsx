@@ -1,4 +1,3 @@
-// import back from '../../images/close-circle-outline.svg'
 import { Dispatch, SetStateAction } from 'react';
 import style from './style.module.css'
 // @ts-ignore

@@ -1,4 +1,4 @@
-import React, { Dispatch, SetStateAction, useContext } from "react";
+import { Dispatch, SetStateAction, useContext } from "react";
 import style from "./style.module.css";
 import { Dark } from "../../App";
 import { categorieFruitEnum } from "../../utils/options-fruit-enum";
