@@ -18,13 +18,11 @@ type PropsSabre = {
 };
 
 export default function Sabre({
-  id,
   french_name,
   roman_name,
   type,
-  category,
   description,
-  is_destroy,
+
   
 }: PropsSabre) {
   const dark = useContext(Dark)

@@ -14,7 +14,7 @@ export default function Test() {
   
 
   const moveFirstDiv = () => {
-    return new Promise<void>((resolve, reject) => {
+    return new Promise<void>((resolve) => {
       setOnMove(true);
       setTimeout(() => {
         setOnMove(false);
