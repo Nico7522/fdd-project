@@ -18,8 +18,8 @@ export default function Lieux() {
   const [filter, setFilter] = useState<string>("all");
   const [className, setClassName] = useState<boolean>(false);
   const [selectedLieu, setSelectedLieu] = useState<string>("");
+  const [handleOpenedfilter, setHandleOpenfilter] = useState<boolean>(false);
   const [show, setShow] = useState(true);
-
   const dark = useContext(Dark);
 
   useEffect(() => {
@@ -65,10 +65,17 @@ export default function Lieux() {
     }
   }, [value, data, page, selectedLieu, filter]);
 
+
+
   if (loading) {
     return <div className="loader"></div>;
   }
 
+  const handleOpenedFilter = () => {
+    
+    
+    return false
+  }
   return (
     <>
       <h1 className={dark ? style["title-black"] : style["title-normal"]}>
@@ -76,7 +83,7 @@ export default function Lieux() {
       </h1>
       <SearchBar value={value} setValue={setValue} />
       <div className={style["multiselect-container"]}>
-        <GeneralFilter setFilter={setFilter} show={show} setShow={setShow} />
+        <GeneralFilter setFilter={setFilter} show={show} setShow={setShow} handleOpenedFilter={handleOpenedFilter}  />
         {filter === "oceans" && show && (
           <OceanFilter
             className={className}
@@ -91,6 +98,9 @@ export default function Lieux() {
             setSelectedLieu={setSelectedLieu}
             setFilter={setFilter}
             setShow={setShow}
+            handleOpenedFilter={handleOpenedFilter}
+           
+            
           />
         )}
       </div>
