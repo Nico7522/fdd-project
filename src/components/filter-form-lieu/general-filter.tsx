@@ -36,7 +36,12 @@ useEffect(() => {
     setShow(true);
     setFilter(value);
   };
-
+const toogleFilter = () => {
+  setIsOpen(!isOpen)
+  if (show) {
+    setShow(false)
+  }
+}
   return (
     <div
       className={style["select-dropdown"] + " " + (dark ? style["dark"] : "")}
@@ -44,7 +49,7 @@ useEffect(() => {
       <div className={style["select-container"]}>
         <h3
           className={style["title-select"]}
-          onClick={() => setIsOpen(!isOpen)}
+          onClick={() => toogleFilter()}
         >
           Select
           <span className={style["arrow"]}>
