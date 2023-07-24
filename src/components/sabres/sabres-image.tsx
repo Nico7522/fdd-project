@@ -10,7 +10,7 @@ export default function SabreImage({ sabreDetails, frenchName }: PropsSabreImage
     return (
         <div className={style['img-container']}>
             {sabreDetails.map(s => (
-               frenchName === s.name && <img key={s.name} className={style['img']} src={"http://localhost:5173/src/images/" + s.link} alt="" />
+               frenchName === s.name && <img key={s.name} className={style['img']} src={"https://api-image-op.netlify.app/public/images/" + s.link} alt="" />
 
             ))}
         </div>
