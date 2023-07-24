@@ -5,11 +5,11 @@ import style from "./style.module.css";
 import "../../App.css";
 import SearchBar from "../../components/searchbar/searchbar";
 import Sabre from "../../components/sabres/sabres";
-import sabreDetails from "../../utils/sabre-image.json";
+
 import { Dark } from "../../App";
 
 export default function Sabres() {
-  const { data, error, loading } = useFetchSabre();
+  const { data, loading } = useFetchSabre();
   const [filteredData, setFilteredData] = useState<SabreResponse[]>([]);
   const [page, setPage] = useState<number>(12);
   const [value, setValue] = useState<string>("");

@@ -1,4 +1,4 @@
-import { MouseEvent, useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import style from "./style.module.css";
 import "../../App.css";
 
@@ -11,7 +11,7 @@ import GeneralFilter from "../../components/filter-form-lieu/general-filter";
 import OceanFilter from "../../components/filter-form-lieu/ocean-filter";
 import RegionFilter from "../../components/filter-form-lieu/region-filter";
 export default function Lieux() {
-  const { data, error, loading } = usefetchLieu();
+  const { data, loading } = usefetchLieu();
   const [filteredData, setFilteredData] = useState<LieuResponse[]>([]);
   const [page, setPage] = useState<number>(12);
   const [value, setValue] = useState<string>("");

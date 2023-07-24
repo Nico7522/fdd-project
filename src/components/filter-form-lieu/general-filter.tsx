@@ -1,10 +1,7 @@
 import {
   Dispatch,
-  MouseEvent,
   SetStateAction,
   useContext,
-  useEffect,
-  useState,
 } from "react";
 import style from "./style.module.css";
 import { Dark } from "../../App";
@@ -26,7 +23,7 @@ export default function GeneralFilter({
 }: PropsGereralFilter) {
   const dark = useContext(Dark);
 
-  const handleChange = (e: MouseEvent, value: string) => {
+  const handleChange = (value: string) => {
     setShow(true);
     setFilter(value);
   };
@@ -49,9 +46,9 @@ export default function GeneralFilter({
         </h3>
         {isOpen && (
           <div className={style["liste-select"]}>
-            <p onClick={(e) => handleChange(e, "all")}>All</p>
-            <p onClick={(e) => handleChange(e, "oceans")}>Océans</p>
-            <p onClick={(e) => handleChange(e, "regions")}>régions</p>
+            <p onClick={() => handleChange("all")}>All</p>
+            <p onClick={() => handleChange("oceans")}>Océans</p>
+            <p onClick={() => handleChange("regions")}>régions</p>
           </div>
         )}
       </div>

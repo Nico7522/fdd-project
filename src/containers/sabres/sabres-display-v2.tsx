@@ -10,7 +10,7 @@ import sabreDetails from "../../utils/sabre-image.json";
 
 // Version avec concat des data et du fichier JSON pour les images
 export default function Sabres() {
-  const { data, error, loading } = useFetchSabre();
+  const { data, loading } = useFetchSabre();
   const [filteredData, setFilteredData] = useState<SabreResponse[]>([]);
   const [allData, setAllData] = useState<SabreResponse[]>([]);
   const [page, setPage] = useState<number>(12);

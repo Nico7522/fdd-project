@@ -9,7 +9,7 @@ import { Dark } from "../App";
 import SelectFormfruit from "../components/select-form/select-form";
 export default function Fruits() {
   const dark = useContext(Dark);
-  const { data, error, loading } = useFetchFruit();
+  const { data, loading } = useFetchFruit();
   const [filteredData, setFilteredData] = useState<FruitsResponse[]>([]);
   const [page, setPage] = useState<number>(12);
   const [value, setValue] = useState<string>("");
