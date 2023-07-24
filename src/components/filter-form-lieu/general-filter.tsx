@@ -1,5 +1,6 @@
 import {
   Dispatch,
+  MouseEvent,
   SetStateAction,
   useContext,
   useEffect,
@@ -13,44 +14,34 @@ type PropsGereralFilter = {
   setFilter: Dispatch<SetStateAction<string>>;
   setShow: Dispatch<SetStateAction<boolean>>;
   show: boolean;
-  handleOpenedFilter: () => boolean;
+  isOpen: boolean;
+  setIsOpen: Dispatch<SetStateAction<boolean>>;
 };
 export default function GeneralFilter({
   setFilter,
   setShow,
   show,
-  handleOpenedFilter,
+  isOpen,
+  setIsOpen,
 }: PropsGereralFilter) {
   const dark = useContext(Dark);
-  const [isOpen, setIsOpen] = useState(false);
 
-useEffect(() => {
-  if (!show) {
-    setIsOpen(false)
-    
-  }
-}, [handleOpenedFilter])
-
-  const handleChange = (e: any, value: string) => {
-    const selectedValue = e.target.innerHTML;
+  const handleChange = (e: MouseEvent, value: string) => {
     setShow(true);
     setFilter(value);
   };
-const toogleFilter = () => {
-  setIsOpen(!isOpen)
-  if (show) {
-    setShow(false)
-  }
-}
+  const toogleFilter = () => {
+    setIsOpen(!isOpen);
+    if (show) {
+      setShow(false);
+    }
+  };
   return (
     <div
       className={style["select-dropdown"] + " " + (dark ? style["dark"] : "")}
     >
       <div className={style["select-container"]}>
-        <h3
-          className={style["title-select"]}
-          onClick={() => toogleFilter()}
-        >
+        <h3 className={style["title-select"]} onClick={toogleFilter}>
           Select
           <span className={style["arrow"]}>
             <SlidersHorizontal size={16} strokeWidth={2} />

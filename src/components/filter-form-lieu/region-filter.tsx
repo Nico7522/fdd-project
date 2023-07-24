@@ -6,20 +6,20 @@ type PropsReginFilter = {
   setFilter: Dispatch<SetStateAction<string>>;
   setShow: Dispatch<SetStateAction<boolean>>;
   show: boolean;
-  handleOpenedFilter: () => boolean
+  setIsOpen: Dispatch<SetStateAction<boolean>>;
 
 };
 export default function RegionFilter({
   className,
   setSelectedLieu,
   setShow,
-  handleOpenedFilter
+  setIsOpen
 }: PropsReginFilter) {
   const handleLieu = (e: MouseEvent) => {
     const value = e.target as HTMLLIElement;
     setSelectedLieu(value.innerHTML);
     setShow(false);
-    handleOpenedFilter()
+    setIsOpen(false)
   
   };
   return (
