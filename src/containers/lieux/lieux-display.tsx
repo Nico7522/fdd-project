@@ -89,6 +89,7 @@ export default function Lieux() {
             className={className}
             setSelectedLieu={setSelectedLieu}
             setShow={setShow}
+            setIsOpen={setIsOpen}
           />
         )}
         {filter === "regions" && show && (

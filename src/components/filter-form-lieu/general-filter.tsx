@@ -26,6 +26,9 @@ export default function GeneralFilter({
   const handleChange = (value: string) => {
     setShow(true);
     setFilter(value);
+    if (value === "all") {
+      setIsOpen(false)
+    }
   };
   const toogleFilter = () => {
     setIsOpen(!isOpen);

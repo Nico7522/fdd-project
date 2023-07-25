@@ -33,6 +33,7 @@
 }
 .title-select {
   border: solid 1px white;
+  width: 70%;
   border-radius: 5px;
   padding-top: 2px;
   padding-bottom: 2px;
@@ -51,8 +52,19 @@
   background: #000;
   border: 1px solid white;
   border-radius: 10px;
-  margin-top: 45px;
+  margin-top: 35px;
   transition: ease-in 0.2s margin-top;
+}
+.liste-select > p {
+ 
+  border-bottom: 1px solid white ;
+  padding: 3px;
+  
+}
+
+.liste-select > p:hover {
+  background: linear-gradient(45deg, rgb(156, 14, 156), midnightblue);
+
 }
 
 .title-select:hover {
@@ -62,7 +74,7 @@
 .arrow {
   position: absolute;
   top: 6px;
-  right: 4px;
+  right: 1px;
 }
 
 .multiselect-container {
@@ -92,12 +104,12 @@
   background: #000;
   border: 1px solid white;
   border-radius: 10px;
-  margin-top: 65px;
+  margin-top: 70px;
   transition: ease-in 0.2s margin-top;
 }
 
 .show {
-  margin-top: 70px;
+  margin-top: 77px;
   display: block;
 }
 

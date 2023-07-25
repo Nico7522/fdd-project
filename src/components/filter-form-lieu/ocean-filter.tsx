@@ -5,12 +5,14 @@ type PropsOceanFilter = {
     className: boolean,
     setSelectedLieu: Dispatch<SetStateAction<string>>;
     setShow: Dispatch<SetStateAction<boolean>>;
+    setIsOpen: Dispatch<SetStateAction<boolean>>;
 }
-export default function OceanFilter({className, setSelectedLieu, setShow}: PropsOceanFilter) {
+export default function OceanFilter({className, setSelectedLieu, setShow, setIsOpen}: PropsOceanFilter) {
     const handleLieu = (e: MouseEvent) => {
         const value = e.target as HTMLLIElement;
         setSelectedLieu(value.innerHTML);
         setShow(false);
+        setIsOpen(false)
       };
   return (
     <div className={style["selected-item"]}>
