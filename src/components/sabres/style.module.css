@@ -125,10 +125,14 @@ button:hover {
   }
 
 }
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 475px) {
+
   .type {
     width: 50%;
   }
+
+}
+@media screen and (max-width: 475px) {
 
   .btn-description {
     width: 40%;
