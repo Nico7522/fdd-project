@@ -25,12 +25,19 @@ export default function Lieux() {
   useEffect(() => {
     if (filter !== "all") {
       setClassName(true);
+    } else {
+      if (data) {
+        const filtered = data?.filter((lieu: LieuResponse) => {
+          return lieu.french_name.toLowerCase().includes(value.toLowerCase());
+        });
+        setFilteredData(filtered);
+      }
     }
 
     return () => {
       setClassName(false);
       setPage(12);
-      setSelectedLieu("");
+      // setSelectedLieu("");
     };
   }, [filter]);
 
@@ -63,12 +70,11 @@ export default function Lieux() {
         setFilteredData(filtered);
       }
     }
-  }, [value, data, page, selectedLieu, filter]);
+  }, [value, data, page, selectedLieu]);
 
   if (loading) {
     return <div className="loader"></div>;
   }
-
 
   return (
     <>
