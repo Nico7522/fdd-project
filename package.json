@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@uidotdev/usehooks": "^2.0.1",
+    "@vercel/analytics": "^1.0.2",
     "axios": "^1.4.0",
     "lucide": "^0.263.0",
     "lucide-react": "^0.263.0",
