@@ -7,7 +7,6 @@ import SearchBar from "../../components/searchbar/searchbar";
 import Sabre from "../../components/sabres/sabres";
 import sabreDetails from "../../utils/sabre-image.json";
 
-
 // Version avec concat des data et du fichier JSON pour les images
 export default function Sabres() {
   const { data, loading } = useFetchSabre();
@@ -29,7 +28,7 @@ export default function Sabres() {
   useEffect(() => {
     if (data) {
       const filtered = allData.filter((sabre: SabreResponse) => {
-        return sabre.french_name.toLowerCase().includes(value.toLowerCase());
+        return sabre.name.toLowerCase().includes(value.toLowerCase());
       });
       setFilteredData(filtered);
     }
