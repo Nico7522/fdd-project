@@ -8,41 +8,38 @@ import SabreImage from "./sabres-image";
 import { Dark } from "../../App";
 type PropsSabre = {
   id: number;
-  french_name: string;
+  name: string;
   roman_name: string;
   type: string;
   category: string;
   description: string;
   is_destroy: boolean;
-
 };
 
 export default function Sabre({
-  french_name,
+  name,
   roman_name,
   type,
   description,
-
-  
 }: PropsSabre) {
-  const dark = useContext(Dark)
+  const dark = useContext(Dark);
   const [modal, setModal] = useState<boolean>(false);
 
   return (
     <div className={style["sabre-component"]}>
-      <h3 className={dark ? style['title-black'] : style['title-normal']}>
+      <h3 className={dark ? style["title-black"] : style["title-normal"]}>
         <img src={japonLogo} width={20} alt="" />
         <br />
         {roman_name}
       </h3>
-      <h4 className={dark ? style['title-black'] : style['title-normal']}>
+      <h4 className={dark ? style["title-black"] : style["title-normal"]}>
         <img src={franceLogo} width={20} alt="" />
         <br />
-        {french_name}
+        {name}
       </h4>
       <p className={style["type"]}>{type ? type : "Inconnu"}</p>
-   
-      <SabreImage sabreDetails={sabreDetails.sabreImage} frenchName={french_name} />
+
+      <SabreImage sabreDetails={sabreDetails.sabreImage} frenchName={name} />
       <button
         className={style["btn-description"]}
         onClick={() => setModal(!modal)}

@@ -28,7 +28,7 @@ export default function Lieux() {
     } else {
       if (data) {
         const filtered = data?.filter((lieu: LieuResponse) => {
-          return lieu.french_name.toLowerCase().includes(value.toLowerCase());
+          return lieu.name.toLowerCase().includes(value.toLowerCase());
         });
         setFilteredData(filtered);
       }
@@ -50,7 +50,7 @@ export default function Lieux() {
             .includes(selectedLieu.toLowerCase());
         });
         const filtered = filteredLieu.filter((lieu: LieuResponse) => {
-          return lieu.french_name.toLowerCase().includes(value.toLowerCase());
+          return lieu.name.toLowerCase().includes(value.toLowerCase());
         });
         setFilteredData(filtered);
       } else if (filter === "regions") {
@@ -60,12 +60,12 @@ export default function Lieux() {
             .includes(selectedLieu.toLowerCase());
         });
         const filtered = filteredLieu.filter((lieu: LieuResponse) => {
-          return lieu.french_name.toLowerCase().includes(value.toLowerCase());
+          return lieu.name.toLowerCase().includes(value.toLowerCase());
         });
         setFilteredData(filtered);
       } else {
         const filtered = data.filter((lieu: LieuResponse) => {
-          return lieu.french_name.toLowerCase().includes(value.toLowerCase());
+          return lieu.name.toLowerCase().includes(value.toLowerCase());
         });
         setFilteredData(filtered);
       }

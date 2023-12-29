@@ -1,4 +1,4 @@
-import {  useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useFetchSabre } from "../../hooks/sabre";
 import { SabreResponse } from "../../types/sabre";
 import style from "./style.module.css";
@@ -13,11 +13,11 @@ export default function Sabres() {
   const [filteredData, setFilteredData] = useState<SabreResponse[]>([]);
   const [page, setPage] = useState<number>(12);
   const [value, setValue] = useState<string>("");
-  const dark = useContext(Dark)
+  const dark = useContext(Dark);
   useEffect(() => {
     if (data) {
       const filtered = data.filter((sabre: SabreResponse) => {
-        return sabre.french_name.toLowerCase().includes(value.toLowerCase());
+        return sabre.name.toLowerCase().includes(value.toLowerCase());
       });
       setFilteredData(filtered);
     }
@@ -29,11 +29,13 @@ export default function Sabres() {
 
   return (
     <>
-      <h1 className={dark ? style['title-black'] : style['title-normal']}>Les Sabres</h1>
+      <h1 className={dark ? style["title-black"] : style["title-normal"]}>
+        Les Sabres
+      </h1>
       <SearchBar value={value} setValue={setValue} />
       <div className={style["sabres-container"]}>
         {filteredData?.slice(0, page).map((sabre: SabreResponse) => {
-          return <Sabre  key={sabre.id} {...sabre} />;
+          return <Sabre key={sabre.id} {...sabre} />;
         })}
       </div>
       {value === "" && (

@@ -3,8 +3,8 @@ import { LieuResponse } from "../types/lieu";
 
 export const fetchLieux = () => {
   return axios
-    .get("https://api.api-onepiece.com/locates")
-    .then(( {data} : AxiosResponse<LieuResponse[]>) => {
+    .get("https://api.api-onepiece.com/v2/locates/fr")
+    .then(({ data }: AxiosResponse<LieuResponse[]>) => {
       return data;
     });
 };

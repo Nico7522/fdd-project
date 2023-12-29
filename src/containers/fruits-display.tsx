@@ -15,24 +15,24 @@ export default function Fruits() {
   const [value, setValue] = useState<string>("");
   const [categorie, setCategorie] = useState<string>("all");
 
- useEffect(() => {
-  if (data) {
-    if (categorie !== "all") {
-      const filteredCategorie = data.filter((fruit: FruitsResponse) => {
-        return fruit.type.toLowerCase() === categorie;
-      });
-      const filtered = filteredCategorie.filter((fruit: FruitsResponse) => {
-        return fruit.french_name.toLowerCase().includes(value.toLowerCase());
-      });
-      setFilteredData(filtered);
-    } else if (categorie === "all") {
-      const filtered = data.filter((fruit: FruitsResponse) => {
-        return fruit.french_name.toLowerCase().includes(value.toLowerCase());
-      });
-      setFilteredData(filtered);
+  useEffect(() => {
+    if (data) {
+      if (categorie !== "all") {
+        const filteredCategorie = data.filter((fruit: FruitsResponse) => {
+          return fruit.type.toLowerCase() === categorie;
+        });
+        const filtered = filteredCategorie.filter((fruit: FruitsResponse) => {
+          return fruit.name.toLowerCase().includes(value.toLowerCase());
+        });
+        setFilteredData(filtered);
+      } else if (categorie === "all") {
+        const filtered = data.filter((fruit: FruitsResponse) => {
+          return fruit.name.toLowerCase().includes(value.toLowerCase());
+        });
+        setFilteredData(filtered);
+      }
     }
-  }
-}, [value, data, page, categorie]);
+  }, [value, data, page, categorie]);
 
   if (loading) {
     return <div className="loader"></div>;
@@ -61,5 +61,3 @@ export default function Fruits() {
     </>
   );
 }
-
-

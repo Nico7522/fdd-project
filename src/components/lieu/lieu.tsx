@@ -7,10 +7,7 @@ import japonLogo from "../../images/japon.png";
 import { LieuResponse } from "../../types/lieu";
 
 import LieuImages from "./lieux-image";
-export default function Lieu({
-  french_name,
-  roman_name,
-}: LieuResponse) {
+export default function Lieu({ name, roman_name }: LieuResponse) {
   const dark = useContext(Dark);
   return (
     <>
@@ -24,12 +21,9 @@ export default function Lieu({
         <h4 className={dark ? style["title-black"] : style["title-normal"]}>
           <img src={franceLogo} width={20} alt="" />
           <br />
-          {french_name}
+          {name}
         </h4>
-        <LieuImages
-          LieuDetails={LieuDetails.ilesImage}
-          frenchName={french_name}
-        />
+        <LieuImages LieuDetails={LieuDetails.ilesImage} frenchName={name} />
       </div>
     </>
   );
